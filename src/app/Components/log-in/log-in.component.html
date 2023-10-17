@@ -1,0 +1,32 @@
+<!-- <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#loginModal">
+  Login
+</button> -->
+
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="loginModal">Login</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email</label>
+            <input type="email" #email class="form-control" aria-describedby="emailHelp" placeholder="Enter your E-mail">
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" #password class="form-control" placeholder="Enter your password">
+          </div>
+
+          <button type="submit" class="btn btn-primary m-1" value="Login" data-bs-dismiss="modal">Login</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,179 @@
+/*  Fixed bottom footer*/
+.navbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 100;
+  }
+  
+  .nav-link {
+    color: #444444;
+  }
+  
+  .navbar-right .nav-link {
+    color: #444444;
+    font-weight: bold;
+  }
+  
+  .nav-underline.left li:nth-child(2) a::before,
+  .nav-underline.left li:nth-child(3) a::before,
+  .nav-underline.left li:nth-child(4) a::before,
+  .nav-underline.left li:nth-child(5) a::before {
+    content: "\2022";
+    margin-right: 10px;
+    font-size: 12px;
+  }
+  
+  .nav-underline li a {
+    display: inline-block;
+  }
+  
+  .nav-underline li a span {
+    display: inline-block;
+    padding-left: 10px;
+  }
+  
+  .nav-underline.left li a:hover {
+    color: #333;
+  }
+
+  .nav-link.dropdown-toggle::after {
+    display: none;
+  }
+ 
+
+
+   .dropdown-menu {
+    color: #000;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    }
+    /*.dropdown-menu ul {
+    
+  
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    
+    .dropdown-menu.show {
+      display: flex;
+    }
+    
+    .dropdown-menu li {
+      margin-bottom: 10px;
+    }*/
+    
+    .dropdown-menu li:first-child a {
+      font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+      font-size: 14px;
+      line-height: 18px;
+      text-transform: capitalize;
+      border-radius: 600px;
+      margin-bottom: 20px;
+    } 
+    
+    .dropdown-menu ul li {
+      list-style: none;
+      padding: 0;
+      justify-content: space-between;
+      margin: 0 10px;
+    
+    } 
+
+   
+/*End Of Fixed Bottom Footer Section*/
+
+  /* Support and Resources Section */
+  .dropup, .dropend, .dropdown, .dropstart, .dropup-center, .dropdown-center { 
+    position:static ;
+  }
+
+.dropup .dropdown-menu {
+   width:1400px;
+   height:300px;
+
+}
+
+.dropup .dropdown-menu > ul {
+  width: 29.88%;
+  margin-right:20px; 
+
+}
+
+.dropup .dropdown-menu > ul > li {
+  position: relative;
+  color: #0087ca;
+
+}
+.dropup .dropdown-menu > ul > li::after { 
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #FF385C  ;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+.dropup .dropdown-menu > ul > li:hover::after  { 
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+
+  
+
+  /* End Support and Resource Section*/
+
+
+
+
+
+
+   /*mobile screens footer */
+   @media(max-width: 576px) {
+    .footer-alt {
+      display: block;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 99;
+      color:#b6b3b3;
+      background-color: #b6b3b3;  
+      text-align:center;
+      justify-content: space-between;
+          
+    }
+    .navbar{
+      display:none;
+    }
+    .list-inline-item li div p {
+      color:#b6b3b3;
+      font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+    }
+    .list-inline-item li {
+      margin-right: 40px;
+
+    }
+    .list-inline-item svg:hover {
+     fill: #FF385C    }
+    
+
+  }
+  
+  @media(min-width: 577px) {
+    .footer-alt {
+      display: none;
+    }
+    .navbar{
+      display:block;
+    }
+  }
+  /*End Of Mobile Screen Footer*/
