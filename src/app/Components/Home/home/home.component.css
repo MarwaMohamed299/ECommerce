@@ -1,7 +1,32 @@
+body {
+    background-color: #000;
+}
+.container-fluid{
+    background-color: #000;
+}
 .card{
     width: 300px;
     height:100px;
 }
 .img{
     width: fit-content;
+}
+
+.jumbotron {
+    background-color: #000; 
+    color: #fff; 
+}
+
+.background-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.background-image img {
+    width: 100%; 
+    height: auto; 
+    margin-left: 60px;
+}
+.card-body {
+    color: #fff; 
 }
