@@ -7,23 +7,28 @@ import { NavBarComponent } from './Components/NavBar/nav-bar/nav-bar.component';
 import { HomeComponent } from './Components/Home/home/home.component';
 import { LogInComponent } from './Components/log-in/log-in.component';
 import { RegisterComponent } from './Components/register/register.component';
-import { FooterComponent } from './Components/Footer/footer/Footer/footer.component';
+import { FooterrComponent } from './Components/Footerr/footerr.component';
+import {HttpClientModule} from '@angular/common/http';
+
 import { FormsModule } from '@angular/forms';
+import { ErrorComponent } from './Components/Error/error/error.component';
 @NgModule({
-  declarations: [
+  declarations: [/* pipes / directives  /components*/
     AppComponent,
     NavBarComponent,
     HomeComponent,
     LogInComponent,
     RegisterComponent,
-    FooterComponent
-  ],
+    ErrorComponent,
+    FooterrComponent
+   ],
   imports: [
-    BrowserModule,
+    BrowserModule, /*External modules*/
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [],//services
   bootstrap: [AppComponent]
 })
 export class AppModule { }
