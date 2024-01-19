@@ -1,8 +1,17 @@
-  <div class="container-fluid mt-5 w-50" >
+ <div *ngIf="userLogInForm; else falseBlock">
+ <div class="container-fluid mt-5 w-50" >
     <h1 class="fs-5 p-3">Login</h1>
 
     <!-- Login Form -->
     <form [formGroup]="userLogInForm">
+
+      <div class="mb-3">
+        <label for="Name" class="form-label">Name</label>
+        <input type="text" id="registerName" class="form-control" placeholder="Enter your name" formControlName="Name">
+          <div *ngIf="userLogInForm.controls['Name'].invalid && (userLogInForm.controls['Name'].dirty || userLogInForm.controls['Name'].touched)"class="text-danger">
+          Name Is Required or Not Correct</div>
+
+      </div>
       <div class="mb-3">
         <label for="Email" class="form-label">Email</label>
         <input type="email" id="loginEmail" class="form-control" placeholder="Enter your email" formControlName="Email">
@@ -21,13 +30,22 @@
 
       </div>
 
-      <button type="submit" class="btn  m-1" [disabled]="!userLogInForm.valid" (click)="onSubmit()">Login</button>
+      <button type="submit" class="btn  m-1" [disabled]="!userLogInForm.valid" (click)="onSubmit($event)">Login</button>
     </form>
-
-    <hr>
+  </div>
+  <hr>
     <div class="text-danger">
       <div>
         {{userLogInForm.value |json }}
       </div>
     </div>
+ </div>
+ <ng-template #falseBlock>
+  <div class="spinner-grow" role="status">
+    <div class="spinner-grow text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
   </div>
+
+
+</ng-template>
