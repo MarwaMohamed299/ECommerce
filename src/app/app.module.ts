@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { ErrorComponent } from './Components/Error/error/error.component';
 import { ProducrDetailsComponent } from './Components/ProductDetails/ProductDetails.component';
 import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [/* pipes / directives  /components*/
     AppComponent,
@@ -22,6 +23,7 @@ import { RouterModule } from '@angular/router';
 
    ],
   imports: [
+    CommonModule,
     BrowserModule, /*External modules*/
     AppRoutingModule,
     RouterModule,

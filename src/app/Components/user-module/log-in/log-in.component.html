@@ -1,32 +1,33 @@
-<!-- <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#loginModal">
-  Login
-</button> -->
+  <div class="container-fluid mt-5 w-50" >
+    <h1 class="fs-5 p-3">Login</h1>
 
-<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="loginModal">Login</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <!-- Login Form -->
+    <form [formGroup]="userLogInForm">
+      <div class="mb-3">
+        <label for="Email" class="form-label">Email</label>
+        <input type="email" id="loginEmail" class="form-control" placeholder="Enter your email" formControlName="Email">
+
+         <div *ngIf="userLogInForm.controls['Email'].invalid && (userLogInForm.controls['Email'].dirty||userLogInForm.controls['Email'].touched)" class="text-danger">
+          Email Is Required</div>
       </div>
-      <div class="modal-body">
 
-        <form>
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email</label>
-            <input type="email" #email class="form-control" aria-describedby="emailHelp" placeholder="Enter your E-mail">
-          </div>
+      <div class="mb-3">
+        <label for="Password" class="form-label">Password</label>
+        <input type="password" id="loginPassword" class="form-control" placeholder="Enter your password" formControlName="Password">
 
-          <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" #password class="form-control" placeholder="Enter your password">
-          </div>
+        <div *ngIf="userLogInForm.controls['Password'].invalid && (userLogInForm.controls['Password'].dirty||userLogInForm.controls['Password'].touched)" class="text-danger" >
+           Password is required or Not Correct
+        </div>
 
-          <button type="submit" class="btn btn-primary m-1" value="Login" data-bs-dismiss="modal">Login</button>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
 
-        </form>
+      <button type="submit" class="btn  m-1" [disabled]="!userLogInForm.valid" (click)="onSubmit()">Login</button>
+    </form>
+
+    <hr>
+    <div class="text-danger">
+      <div>
+        {{userLogInForm.value |json }}
       </div>
     </div>
   </div>
-</div>

@@ -1,0 +1,46 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #F3F3F3;
+}
+
+.container-fluid {
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styles */
+form {
+  padding: 20px;
+}
+
+form .form-label {
+  font-size: 0.9em;
+  color: #AAA;
+}
+
+form .form-control {
+  border: none;
+  border-bottom: 2px solid #AAA;
+  background-color: transparent;
+  margin-bottom: 20px;
+}
+
+form .form-control::placeholder {
+  color: #AAA;
+}
+
+form .btn {
+  background-color: #FF6347;
+  color: #FFF;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form .btn:hover {
+  background-color: #FF4500;
+}
