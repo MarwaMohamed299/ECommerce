@@ -6,12 +6,13 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './Components/NavBar/nav-bar/nav-bar.component';
 import { HomeComponent } from './Components/Home/home/home.component';
 import { FooterrComponent } from './Components/Footerr/footerr.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ErrorComponent } from './Components/Error/error/error.component';
 import { ProducrDetailsComponent } from './Components/ProductDetails/ProductDetails.component';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { UserInterceptor } from './Components/user-module/AuthInterceptor/user.interceptor';
 @NgModule({
   declarations: [/* pipes / directives  /components*/
     AppComponent,
@@ -30,7 +31,13 @@ import { CommonModule } from '@angular/common';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],//services
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass :UserInterceptor,
+      multi : true,
+    }
+  ],//services
   bootstrap: [AppComponent]
 })
 export class AppModule { }
