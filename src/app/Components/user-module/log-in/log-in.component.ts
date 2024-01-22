@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { LogInDto } from '../DTOs/LogInDto';
 import { UserServiceService } from 'src/app/Services/user-service.service';
+import { Router } from '@angular/router';
 
 
 
@@ -16,7 +17,7 @@ import { UserServiceService } from 'src/app/Services/user-service.service';
 })
 export class LogInComponent {
 
-  constructor(private userService:UserServiceService){}
+  constructor(private userService:UserServiceService, private router:Router){}
   userLogInForm: FormGroup = new FormGroup({
     Name : new FormControl('',Validators.maxLength(30) && Validators.minLength(3) && Validators.required),
     Email : new FormControl('',[Validators.required,Validators.email]),
@@ -28,12 +29,14 @@ export class LogInComponent {
     e.preventDefault();
 
     var credentials = new LogInDto();
+    credentials.UserName=this.userLogInForm.controls['Name'].value??'';
     credentials.Email=this.userLogInForm.controls['Email'].value ?? '';
     credentials.Password = this.userLogInForm.controls['Password'].value ?? '';
 
     this.userService.login(credentials).subscribe((token)=>{
       console.log(token);
       this.userService.isLoggedIn$.next(true);
+      this.router.navigateByUrl('/');
     })
   }
 }

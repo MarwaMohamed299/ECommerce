@@ -7,6 +7,7 @@ import { UserServiceService } from 'src/app/Services/user-service.service';
 })
 export class NavBarComponent implements OnInit {
 NavBarisLoggedIn =false;
+userName="userName";
 
 constructor( private userService:UserServiceService){}
 

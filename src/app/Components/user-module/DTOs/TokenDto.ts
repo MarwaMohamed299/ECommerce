@@ -1,5 +1,5 @@
 export class TokenDto {
-  UserName :string = '';
-  Email:string='';
-  Password:string='';
+  token: string = '';
+  expiry: Date = new Date();
+  result: number = 0;
 }

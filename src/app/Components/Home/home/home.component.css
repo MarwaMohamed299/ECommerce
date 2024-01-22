@@ -13,8 +13,8 @@ body {
 }
 
 .jumbotron {
-    background-color: #000; 
-    color: #fff; 
+    background-color: #000;
+    color: #fff;
 }
 
 .background-image {
@@ -23,10 +23,10 @@ body {
 }
 
 .background-image img {
-    width: 100%; 
-    height: auto; 
+    width: 100%;
+    height: auto;
     margin-left: 60px;
 }
 .card-body {
-    color: #fff; 
+    color: #fff;
 }

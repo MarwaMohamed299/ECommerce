@@ -1,5 +1,5 @@
-<a *ngIf="!NavBarisLoggedIn" routerLink="/User/LogIn">NotLogged</a>
-<div *ngIf="NavBarisLoggedIn" >Helllo</div>
+<a *ngIf="!NavBarisLoggedIn" routerLink="/User/LogIn">NotLoggedIn?! Please click to LogIn</a>
+<div *ngIf="NavBarisLoggedIn" >Hello{{userName}}</div>
 <div class="container-fluid">
 <div class="row">
 <nav class="navbar navbar-expand-lg navbar-dark  justify-content-around w-100 ">
@@ -13,15 +13,11 @@
         <li class="nav-item  d-flex justify content end px-4">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
-        <li class="nav-item d-flex justify content end px-4">
-          <a class="nav-link" href="#">About  Us</a>
-        </li>
+
         <li class="nav-item d-flex justify content center px-4">
           <a class="nav-link" href="#">Services</a>
         </li>
-        <li class="nav-item d-flex justify content end px-4">
-          <a class="nav-link ">Gallery</a>
-        </li>
+
         <li class="nav-item d-flex justify-content-end px-4">
           <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#registerModal" routerLink="User/Register">
             Register
@@ -30,6 +26,11 @@
         <li class="nav-item d-flex justify-content-end px-4">
           <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#loginModal" routerLink="User/LogIn">
             Login
+          </button>
+        </li>
+        <li class="nav-item d-flex justify-content-end px-4">
+          <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#loginModal" routerLink="User/UserDetails">
+            MyAccount
           </button>
         </li>
 
