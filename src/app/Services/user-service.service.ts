@@ -4,6 +4,7 @@ import { LogInDto } from '../Components/user-module/DTOs/LogInDto';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { TokenDto } from '../Components/user-module/DTOs/TokenDto';
 import { tap } from 'rxjs/operators';
+import { RegisterDto } from '../Components/user-module/DTOs/RegisterDto';
 
 @Injectable({
 
@@ -28,6 +29,9 @@ export class UserServiceService {
       })
     );
 
+  }
+  public register(credentials:RegisterDto){
+  return this.client.post(`https://localhost:7175/api/Users/Register`,credentials)
   }
 
   public GetUserDetails (id:string)

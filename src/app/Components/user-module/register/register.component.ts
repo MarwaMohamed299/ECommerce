@@ -4,6 +4,8 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserServiceService } from 'src/app/Services/user-service.service';
 
 @Component({
   standalone: false,
@@ -12,6 +14,8 @@ import {
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
+
+constructor(private userService: UserServiceService,private router : Router){}
   userRegisterForm: FormGroup = new FormGroup({
     Name: new FormControl(
       '',
@@ -28,5 +32,18 @@ export class RegisterComponent {
 
   onSubmit() {
     console.warn(this.userRegisterForm.value);
+
+    if (this.userRegisterForm.valid)
+    {
+      this.userService.register(this.userRegisterForm.value).subscribe({
+        next: response => {
+          console.log('Registration successful', response);
+          this.router.navigateByUrl('/');
+        },
+        error: error => {
+          console.error('Error in registeration', error);
+        }
+      });
+    }
   }
 }
