@@ -6,10 +6,9 @@
     <form [formGroup]="userRegisterForm" >
       <div class="mb-3">
         <label for="Name" class="form-label">Name</label>
-        <input type="text" id="registerName" class="form-control" placeholder="Enter your name" formControlName="Name">
-          <div *ngIf="userRegisterForm.controls['Name'].invalid && (userRegisterForm.controls['Name'].dirty || userRegisterForm.controls['Name'].touched)"class="text-danger">
+        <input type="text" id="registerName" class="form-control" placeholder="Enter your name" formControlName="userName">
+          <div *ngIf="userRegisterForm.controls['userName'].invalid && (userRegisterForm.controls['userName'].dirty || userRegisterForm.controls['userName'].touched)"class="text-danger">
           Name Is Required or Not Correct</div>
-
       </div>
 
       <div class="mb-3">

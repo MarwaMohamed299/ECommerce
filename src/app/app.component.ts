@@ -10,11 +10,18 @@ export class AppComponent implements OnInit {
   title = 'ECommerce';
 
   constructor(private userService:UserServiceService) { }
-
-  ngOnInit(): void {
-    if(localStorage.getItem('token'))
-    {
-      this.userService.isLoggedIn$.next(true);
-    }
+Name:string ='';
+ngOnInit(): void {
+  if(localStorage.getItem('token')) {
+    this.userService.isLoggedIn$.next(true);
+    this.userService.GetUserDetails().subscribe({
+      next: (data: any) => {
+        this.Name = data.userName;
+      },
+      error: error => {
+        console.error(error);
+      }
+    });
   }
+}
 }

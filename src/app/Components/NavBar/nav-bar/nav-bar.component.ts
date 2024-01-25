@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, } from '@angular/core';
 import { UserServiceService } from 'src/app/Services/user-service.service';
 @Component({
   selector: 'app-nav-bar',
@@ -7,8 +7,7 @@ import { UserServiceService } from 'src/app/Services/user-service.service';
 })
 export class NavBarComponent implements OnInit {
 NavBarisLoggedIn =false;
-userName="userName";
-
+@Input() userName :string ='';
 constructor( private userService:UserServiceService){}
 
 ngOnInit(): void {
@@ -16,5 +15,6 @@ ngOnInit(): void {
   this.userService.isLoggedIn$.subscribe((IsLoggedIn)=>
   this.NavBarisLoggedIn =IsLoggedIn
   )
+
 }
 }

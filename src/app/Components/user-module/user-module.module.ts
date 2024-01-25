@@ -10,7 +10,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 
 const routes: Routes = [
   { path: 'LogIn', component: LogInComponent },
-   { path: 'Register', component: RegisterComponent },
+  { path: 'Register', component: RegisterComponent },
   { path: 'UserDetails', canActivate:[userGuard],component:UserDetailsComponent}
 ];
 @NgModule({

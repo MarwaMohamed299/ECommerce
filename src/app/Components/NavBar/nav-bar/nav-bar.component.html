@@ -1,5 +1,15 @@
-<a *ngIf="!NavBarisLoggedIn" routerLink="/User/LogIn">NotLoggedIn?! Please click to LogIn</a>
-<div *ngIf="NavBarisLoggedIn" >Hello{{userName}}</div>
+
+<div *ngIf="!NavBarisLoggedIn; else elseBlock" class="text-center ">
+  <a routerLink="/User/LogIn" class="alert alert-danger">Not Logged In? Please click to Log In</a>
+</div>
+
+<ng-template #elseBlock>
+  <div class="alert alert-success " role="alert">
+    Hello, <strong>{{userName}}</strong>
+  </div>
+</ng-template>
+
+
 <div class="container-fluid">
 <div class="row">
 <nav class="navbar navbar-expand-lg navbar-dark  justify-content-around w-100 ">
@@ -19,17 +29,17 @@
         </li>
 
         <li class="nav-item d-flex justify-content-end px-4">
-          <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#registerModal" routerLink="User/Register">
+          <button type="button" class="btn "  routerLink="User/Register">
             Register
           </button>
         </li>
         <li class="nav-item d-flex justify-content-end px-4">
-          <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#loginModal" routerLink="User/LogIn">
+          <button type="button" class="btn " routerLink="User/LogIn">
             Login
           </button>
         </li>
         <li class="nav-item d-flex justify-content-end px-4">
-          <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#loginModal" routerLink="User/UserDetails">
+          <button type="button" class="btn "   routerLink="User/UserDetails">
             MyAccount
           </button>
         </li>

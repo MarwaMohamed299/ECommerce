@@ -17,7 +17,7 @@ export class RegisterComponent {
 
 constructor(private userService: UserServiceService,private router : Router){}
   userRegisterForm: FormGroup = new FormGroup({
-    Name: new FormControl(
+    userName: new FormControl(
       '',
       Validators.maxLength(30) && Validators.minLength(3) && Validators.required
     ),
@@ -42,6 +42,7 @@ constructor(private userService: UserServiceService,private router : Router){}
         },
         error: error => {
           console.error('Error in registeration', error);
+          console.log (error);
         }
       });
     }
