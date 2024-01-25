@@ -1,3 +1,9 @@
+<ul >
+  <li *ngFor="let product of items | paginate: { id: 'products-pagination', itemsPerPage: CountPerPage, currentPage: +page, totalItems: +totalCount }">
+      {{ product.name }}
+  </li>
+</ul>
+<pagination-controls (pageChange)="GetProducts($event)" id="products-pagination"></pagination-controls>
 <body>
 <div class="container-fluid">
 <div class="jumbotron text-center">

@@ -13,6 +13,7 @@ import { ProducrDetailsComponent } from './Components/ProductDetails/ProductDeta
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { UserInterceptor } from './Components/user-module/AuthInterceptor/user.interceptor';
+import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
   declarations: [/* pipes / directives  /components*/
     AppComponent,
@@ -29,7 +30,8 @@ import { UserInterceptor } from './Components/user-module/AuthInterceptor/user.i
     AppRoutingModule,
     RouterModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [
     {

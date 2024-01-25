@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { productPaginationDto } from '../Components/ProductsDto/productPaginationDto';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +12,9 @@ export class ProductService {
 
   private Base_URL ="https://localhost:7284/api/Products"
 
-  GetAllProducts(){
-   return this.httpClient.get(this.Base_URL);
+  GetAllProducts(page:number,countPerPage:number):Observable<productPaginationDto>{
+
+   return this.httpClient.get<productPaginationDto>(`https://localhost:7175/api/Products/${page}/${countPerPage}`);
   }
 
   GetAllProductsById(id:any){
