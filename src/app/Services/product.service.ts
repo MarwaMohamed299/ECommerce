@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { productPaginationDto } from '../Components/ProductsDto/productPaginationDto';
 import { productReadDto } from '../Components/ProductsDto/productReadDto';
-import { productUpdateDto } from '../Components/ProductsDto/ProductUpdateDto';
+import {ProductUpdateDto } from '../Components/ProductsDto/ProductUpdateDto';
 import { productAddDto } from '../Components/ProductsDto/ProductAddDto';
 
 
@@ -28,8 +28,8 @@ export class ProductService {
     return this.httpClient.post<productAddDto>(this.Base_URL, newProduct);
   }
 
-  Update(updatedProduct: productUpdateDto, productId: number): Observable<productUpdateDto> {
-    return this.httpClient.put<productUpdateDto>(`https://localhost:7175/api/Products/${productId}`, updatedProduct);
+  Update(updatedProduct: ProductUpdateDto, productId: number): Observable<ProductUpdateDto> {
+    return this.httpClient.put<ProductUpdateDto>(`https://localhost:7175/api/Products/${productId}`, updatedProduct);
   }
 Delete(productId: number): Observable<productReadDto> {
   return this.httpClient.delete<  productReadDto>(`${this.Base_URL}${productId}`);

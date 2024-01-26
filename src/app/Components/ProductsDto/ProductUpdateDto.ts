@@ -1,6 +1,6 @@
-export interface productUpdateDto {
-  name: string;
-  price: string;
-  tagId: [string];
-  productId: string;
+export class ProductUpdateDto {
+  Name: string='';
+  price: string='';
+  tagId: [string]=[''];
+  productId: string='';
 }
