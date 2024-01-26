@@ -1,0 +1,63 @@
+<div class="container mt-5">
+  <h2>Add Product</h2>
+  <form [formGroup]="productaddForm" (ngSubmit)="add()">
+    <div class="form-group">
+      <label for="OrderId">Order Id:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="orderId"
+        formControlName="orderId"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="name">Product Name:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        formControlName="name"
+        required
+      />
+      <div
+        *ngIf="
+          productaddForm.controls['name'].invalid &&
+          (productaddForm.controls['name'].dirty ||
+            productaddForm.controls['name'].touched)
+        "
+        class="text-danger"
+      >
+        Product Name Is Required or Not Correct
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="price">Price:</label>
+      <input
+        type="number"
+        class="form-control"
+        id="price"
+        formControlName="price"
+        required
+        pattern="^\d+(\.\d{1,2})?$"
+      />
+      <div
+        *ngIf="
+          productaddForm.controls['price'].invalid &&
+          (productaddForm.controls['price'].dirty ||
+            productaddForm.controls['price'].touched)
+        "
+        class="text-danger"
+      >
+        price Is Required or Not Correct
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Product</button>
+  </form>
+</div>
+<br /><br />
+
+<div class="text-danger">
+  <div>{{ productaddForm.value | json }}</div>
+</div>

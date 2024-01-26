@@ -1,6 +1,6 @@
-import { productReadDto } from "./productReadDto";
+import { productReadDto } from './productReadDto';
 
-export class productPaginationDto{
-  items:productReadDto[]=[];
-  totalCount :number =0;
+export class productPaginationDto {
+  items: productReadDto[] = [];
+  totalCount: number = 0;
 }

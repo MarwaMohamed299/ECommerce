@@ -1,65 +1,67 @@
-<ul >
-  <li *ngFor="let product of items | paginate: { id: 'products-pagination', itemsPerPage: CountPerPage, currentPage: +page, totalItems: +totalCount }">
-      {{ product.name }}
-  </li>
-</ul>
-<pagination-controls (pageChange)="GetProducts($event)" id="products-pagination"></pagination-controls>
 <body>
-<div class="container-fluid">
-<div class="jumbotron text-center">
-  <div class="background-image">
-      <img src="https://www.apple.com/v/iphone-15-pro/b/images/overview/welcome/hero__iztc7m63bfiy_large.jpg" alt="Background Image">
-  </div>
-  <h1 class="display-4">Welcome to Apple</h1>
-  <p class="lead">Explore the latest and greatest Items!</p>
-  <a class="btn btn-light btn-lg" href="#" role="button">Shop Now</a>
-</div>
-
-  <br><br>
-
-  <div class="container p-5" style="background-color: #000000;">
-    <div class="row">
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="https://cdn.wccftech.com/wp-content/uploads/2021/03/2023-iPhone-with-periscope-telephoto-lens-768x503.jpg" class="card-img-top" alt="Phone 1">
-          <div class="card-body">
-            <h5 class="card-title">Phone Model 1</h5>
-            <p class="card-text">Discover the amazing features of Phone 1.</p>
-            <a  class="btn btn-dark" routerLink="/ProductDetails/:Id">View Details</a>
-
-          </div>
-        </div>
+  <div class="container-fluid">
+    <div class="jumbotron text-center text-light">
+      <div class="background-image">
+        <img
+          src="https://www.apple.com/v/iphone-15-pro/b/images/overview/welcome/hero__iztc7m63bfiy_large.jpg"
+          alt="Background Image"
+        />
       </div>
-
-      <div class="col-md-4 mb-4" >
-        <div class="card">
-          <img src="https://cdn.wccftech.com/wp-content/uploads/2021/03/2023-iPhone-with-periscope-telephoto-lens-768x503.jpg" class="card-img-top" alt="Phone 2">
-          <div class="card-body ">
-            <h5 class="card-title">Phone Model 2</h5>
-            <p class="card-text ">Experience the innovation of Phone 2.</p>
-            <a  class="btn btn-dark" routerLink="/ProductDetails/:Id">View Details</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="https://cdn.wccftech.com/wp-content/uploads/2021/03/2023-iPhone-with-periscope-telephoto-lens-768x503.jpg" class="card-img-top" alt="Phone 3">
-          <div class="card-body">
-            <h5 class="card-title">Phone Model 3</h5>
-            <p class="card-text">Stay connected with Phone 3.</p>
-            <a  class="btn btn-dark" routerLink="/ProductDetails/:Id">View Details</a>
-
-          </div>
-        </div>
-      </div>
-      <br><br><br>
-      <br><br><br>
-      <br><br><br>
-      <br><br><br>
-      <br><br><br>
-      <br><br><br>
-
+      <h1 class="display-4">Welcome to Apple</h1>
+      <p class="lead">Explore the latest and greatest items!</p>
+      <a class="btn btn-light btn-lg" href="#" role="button">Shop Now</a>
     </div>
+
+    <br /><br />
+
+    <div class="container-fluid">
+      <div class="d-flex flex-wrap p-5 m-5">
+        <div
+          *ngFor="
+            let product of items
+              | paginate
+                : {
+                    id: 'products-pagination',
+                    itemsPerPage: CountPerPage,
+                    currentPage: page,
+                    totalItems: totalCount
+                  }
+          "
+          class="col-md-4 mb-4"
+        >
+          <div class="card m-4">
+            <img
+              src="https://cdn.wccftech.com/wp-content/uploads/2021/03/2023-iPhone-with-periscope-telephoto-lens-768x503.jpg"
+              class="card-img-top"
+              alt="Product Image"
+            />
+            <div class="container p-3" style="background-color: #000000">
+              <div class="card-body text-light">
+                <h5 class="card-title">{{ product.name }}</h5>
+                <p class="card-text">{{ product.price }}</p>
+                <a
+                  class="btn btn-dark m-1"
+                  routerLink="/ProductDetails/{{ product.productId }}"
+                  >View Details</a
+                >
+                <a
+                  class="btn btn-dark m-1"
+                  routerLink="/Edit/{{ product.productId }}"
+                  >Edit</a
+                >
+                <a class="btn btn-dark m-1" (click)="Delete(product.productId)">Delete</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <pagination-controls
+      class="d-flex justify-content-center"
+      (pageChange)="GetProducts($event)"
+      id="products-pagination"
+    ></pagination-controls>
+    <br /><br /><br />
   </div>
-</div>
+</body>

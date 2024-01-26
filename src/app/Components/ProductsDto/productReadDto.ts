@@ -1,5 +1,5 @@
-export interface productReadDto{
- name:string;
- productId:number;
- price:string;
+export interface productReadDto {
+  name: string;
+  productId: number;
+  price: string;
 }

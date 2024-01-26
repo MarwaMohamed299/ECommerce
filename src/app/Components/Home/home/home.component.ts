@@ -4,28 +4,36 @@ import { productReadDto } from '../../ProductsDto/productReadDto';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-    totalCount =0;
-    page =1;
-    items:productReadDto[]=[];
+  totalCount = 0;
+  page = 1;
+  items: productReadDto[] = [];
 
- CountPerPage =15;
+  CountPerPage = 3;
 
- constructor(private productService:ProductService){}
-    ngOnInit(): void {
-      this.GetProducts(1);
-    }
-    GetProducts(page: number) {
-      console.log('Page Change Event:', page);
-      this.productService.GetAllProducts(page, this.CountPerPage)
-        .subscribe((data) => {
-          this.totalCount = data.totalCount;
-          this.items = data.items;
-        });
-    }
+  constructor(private productService: ProductService) {}
+  ngOnInit(): void {
+    this.GetProducts(1);
+  }
+  GetProducts(page: number) {
+    console.log('Page Change Event:', page);
+    this.productService
+      .GetAllProducts(page, this.CountPerPage)
+      .subscribe((data) => {
+        this.totalCount = data.totalCount;
+        this.items = data.items;
+        this.page = page;
+      });
+  }
 
-    }
-
-
+  Delete(productId: number) {
+    this.productService.Delete(productId).subscribe({
+      next: (response: any) => {
+        console.log('Product deleted:', response);
+      },
+      error: (err: any) => console.error(err),
+    });
+  }
+}
