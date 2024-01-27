@@ -1,6 +1,15 @@
 # ECommerce
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.6.
+- This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.6.
+- Includes an authentication module with necessary components and routing configured.
+- Uses reactive forms with necessary validations.
+- Uses a service to call login/register APIs.
+- The token received from these APIs is saved to local storage and used in subsequent requests via an interceptor.
+- On app startup, if a token is found in local storage, the user is set to be logged in.
+- The App Component calls the get user details API if the user is authenticated.
+- The user name is displayed in the header using an @input decorator.
+- The project also includes client-side pagination and CRUD operations for products.
+- The Add, Edit, Delete, and Details operations redirect to their respective components with necessary route parameters.
 
 ## Development server
 
