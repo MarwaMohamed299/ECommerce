@@ -1,8 +1,3 @@
-body {
-    background-color: #000;
-}
-
-
 .img{
     width: fit-content;
 }
@@ -18,6 +13,15 @@ body {
     margin-left: 60px;
 }
 .card-body {
-    color: #fff;
+    color: #353434;
 }
 
+.dark-button {
+  background-color:#282828;
+  border-radius: 7px;
+  margin-left:5px;
+  margin-bottom: 5px;
+  color: white;
+  height: 40px;
+
+}

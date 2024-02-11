@@ -1,0 +1,26 @@
+.confirmation-dialog {
+  text-align: center;
+  padding: 20px;
+}
+
+.confirmation-dialog h2 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.confirmation-dialog p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 20px;
+   color: white;
+
+}
+
+.confirmation-dialog .buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.confirmation-dialog button {
+  margin: 0 10px;
+}

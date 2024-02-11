@@ -1,5 +1,5 @@
 <body>
-  <div class="container-fluid">
+  <div class="container-fluid" style="background-color: #000000">
     <div class="jumbotron text-center text-light">
       <div class="background-image">
         <img
@@ -49,7 +49,13 @@
                   routerLink="/Edit/{{ product.productId }}"
                   >Edit</a
                 >
-                <a class="btn btn-dark m-1" (click)="Delete(product.productId)">Delete</a>
+                <button
+                  mat-flat-button
+                  class="dark-button"
+                  (click)="openConfirmationDialog(product.productId)"
+                >
+                  Delete
+                </button>
               </div>
             </div>
           </div>

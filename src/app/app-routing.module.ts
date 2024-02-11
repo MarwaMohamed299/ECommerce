@@ -8,6 +8,7 @@ import { HomeComponent } from './Components/Home/home/home.component';
 import { ProducrDetailsComponent } from './Components/ProductDetails/ProductDetails.component';
 import { AddComponent } from './Components/add/add.component';
 import { EditProductComponent } from './Components/edit/edit.component';
+import { DialogBoxComponent } from './Components/dialog-box/dialog-box.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
