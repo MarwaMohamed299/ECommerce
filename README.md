@@ -10,7 +10,7 @@
 - The user name is displayed in the header using an @input decorator.
 - The project also includes client-side pagination and CRUD operations for products.
 - The Add, Edit, Delete, and Details operations redirect to their respective components with necessary route parameters.
-- The Delete operations initiate a confirmation op up using Angular Material
+- The Delete operations initiate a confirmation pop up using Angular Material
 
 ## Development server
 
